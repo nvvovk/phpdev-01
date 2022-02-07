@@ -24,7 +24,8 @@ echo $tree
 <html>
     <body>
         <h1><?php echo "Hello, world!"; ?></h1>
-        I'm <?php echo $_REQUEST['name'] ?? 'Noname'; ?>
+        <p>I'm <?php echo $_REQUEST['name'] ?? 'Noname'; ?></p>
+        <pre><?php echo $tree; ?></pre>    
     </body>
 </html>
 
