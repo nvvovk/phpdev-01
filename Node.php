@@ -1,31 +1,68 @@
-<html>
-    <body>
-        <h1><?php echo "Hello, world!"; ?></h1>
-        I'm <?php echo $_REQUEST['name'] ?? 'Noname'; ?>
-        
-        <?php
-echo "Hi!";
+<?php
 
-$tree = (new \Node('Electronics'))
-    ->addChild(
-        (new \Node('Televisions'))
-            ->addChild(new \Node('Tube'))
-            ->addChild(new \Node('LCD'))
-            ->addChild(new \Node('Plasma'))
-        )
-    ->addChild(
-        (new \Node('Portable electronic'))
-            ->addChild((new \Node('MP3 players'))->addChild(new \Node('Flash')))
-            ->addChild(new \Node('CD players'))
-            ->addChild(new \Node('2 way radios'))
-        )    
-    ;
-?>
+class Node extends NodeAbstract
+{
 
-    </body>
-</html>
+    // private string $name = '';
+    
+    private array $children = [];
+    
+    //public function __construct(string $name);
+    // {
+    //    $this->name = $name;
+    // }
 
-/*
-Как я поняла, надо создать документ Node.php, вставить туда шаблон из ДЗ3. Но я не знаю, что здесь надо поменять, ведь все категории товаров уже заполнены.
-Как вывести каталог на страницу браузера так же не понятно. В интернете пишут разные команды для этого: scandir, showdir, opendir, showtree. Но какой выбрать? Непонятен синткасис, что означают все знаки ($, $file == '.' и многие другие).
-*/
+    public function __toString(): string
+    {
+        return self::print($this);
+    }
+    
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return Node[]
+     */
+    public function getChildren(): array
+    {
+        return $this->children;
+    }
+    
+    public function addChild(Node $node): self
+    {
+        $this->children[] = $node;
+
+        return $this;
+    }
+private static function print(Node $node, $level = 1)
+{
+    $html = str_repeat('+ ', $level) . $node->, $levelgetName(). "\n";
+
+    foreach ($node->getChildren() as $child) {
+        $html .= self::print($child, $level + 1);
+    }
+
+    return $html;
+}
+
+}
+
+
+class Node2 implements NodeInterface {
+
+    public function _construct(string $name);
+
+    public function _toString(): string;
+    
+    public function getName(): string;
+
+    /**
+     * @return Node[]
+     */
+    public function getChildren(): array;
+
+    public function addChild(Node $node): self;
+}
+

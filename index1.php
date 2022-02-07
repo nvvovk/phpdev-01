@@ -1,9 +1,10 @@
-<?php
-
-include './NodeInterface.php';
-include './NodeAbstract.php';
-include './Node.php';
-
+<html>
+    <body>
+        <h1><?php echo "Hello, world!"; ?></h1>
+        I'm <?php echo $_REQUEST['name'] ?? 'Noname'; ?>
+        
+        <?php
+echo "Hi!";
 
 $tree = (new \Node('Electronics'))
     ->addChild(
@@ -19,12 +20,8 @@ $tree = (new \Node('Electronics'))
             ->addChild(new \Node('2 way radios'))
         )    
     ;
-echo $tree;
 ?>
-<html>
-    <body>
-        <h1><?php echo "Hello, world!"; ?></h1>
-        I'm <?php echo $_REQUEST['name'] ?? 'Noname'; ?>
+
     </body>
 </html>
 
