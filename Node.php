@@ -36,9 +36,10 @@ class Node extends NodeAbstract
 
         return $this;
     }
+
 private static function print(Node $node, $level = 1)
 {
-    $html = str_repeat('+ ', $level) . $node->, $levelgetName(). "\n";
+    $html = str_repeat('+ ', $level) . $node->getName()."\n";
 
     foreach ($node->getChildren() as $child) {
         $html .= self::print($child, $level + 1);
@@ -50,19 +51,5 @@ private static function print(Node $node, $level = 1)
 }
 
 
-class Node2 implements NodeInterface {
 
-    public function _construct(string $name);
-
-    public function _toString(): string;
-    
-    public function getName(): string;
-
-    /**
-     * @return Node[]
-     */
-    public function getChildren(): array;
-
-    public function addChild(Node $node): self;
-}
 

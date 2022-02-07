@@ -3,9 +3,9 @@
 abstract class NodeAbstract implements NodeInterface
 {
 
-    private string $name = '';
+    protected string $name = '';
 
-    public function __construct(string $name);
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
