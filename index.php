@@ -4,7 +4,6 @@ include './NodeInterface.php';
 include './NodeAbstract.php';
 include './Node.php';
 
-
 $tree = (new \Node('Electronics'))
     ->addChild(
         (new \Node('Televisions'))
@@ -19,7 +18,6 @@ $tree = (new \Node('Electronics'))
             ->addChild(new \Node('2 way radios'))
         )    
     ;
-echo $tree;
 ?>
 <html>
     <body>
