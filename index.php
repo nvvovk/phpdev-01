@@ -17,7 +17,9 @@ $tree = (new \Node('Electronics'))
             ->addChild(new \Node('CD players'))
             ->addChild(new \Node('2 way radios'))
         )    
-    ;
+        ;
+
+echo $tree
 ?>
 <html>
     <body>
