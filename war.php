@@ -4,13 +4,16 @@
         function Unit();
     }
 
-    class Unit implements iUnit
-        private $name_of_troops = '';
-        private $health ();
-        private $armour ();
-        private $damage ();
-
-    CompoundArmy    
+    class Unit 
+    {
+        public $name = '';
+        public $health ();
+        public $armour ();
+        public $damage ();
+    }
+    
+    class CompoundArmy implements iUnit
+          
 
     foreach ($army['units'] as $unit => $count) 
     {
